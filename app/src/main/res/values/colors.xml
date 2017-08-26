@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorGreen">#1ABC9C</color>
+    <color name="colorGreen">#66bb6a</color>
     <color name="colorWhite">#fff</color>
     <color name="colorBlack">#000000</color>
     <color name="colorBlue">#3498DB</color>
@@ -11,8 +11,8 @@
     <color name="colorYellow">#FFFF00</color>
     <color name="background_material_light">#fafafa</color>
     <color name="foreground_material_light_1">#fefefe</color>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorPrimary">#4caf50</color>
+    <color name="colorPrimaryDark">#2e7d32</color>
     <color name="colorAccent">#FF4081</color>
 
     <color name="black_overlay">#66000000</color>
