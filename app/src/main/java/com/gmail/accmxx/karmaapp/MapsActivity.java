@@ -20,6 +20,8 @@ import com.google.android.gms.maps.model.MarkerOptions;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
+    public static boolean initialized = false;
+
     private static final int MY_PERMISSIONS_REQUEST_GPS = 1;
 
     private GoogleMap mMap;
@@ -32,6 +34,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        initialized = false;
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
@@ -55,7 +60,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 public void onLocationChanged(Location location) {
                     double lat = location.getLatitude();
                     double lng = location.getLongitude();
-                    goToLocationZoom(lat, lng, ZOOM);
+                    if(!initialized) {
+                        goToLocationZoom(lat, lng, ZOOM);
+                        initialized = true;
+                    }
                 }
 
                 @Override
@@ -80,7 +88,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 public void onLocationChanged(Location location) {
                     double lat = location.getLatitude();
                     double lng = location.getLongitude();
-                    goToLocationZoom(lat, lng, ZOOM);
+                    if(!initialized) {
+                        goToLocationZoom(lat, lng, ZOOM);
+                        initialized = true;
+                    }
                 }
 
                 @Override
@@ -114,16 +125,17 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         googleMap.addMarker(new MarkerOptions()
                 .position(new LatLng(43.663201,-79.410589))
-                .title("Need Ideas for an app\n1 K-Point"));
+                .title("Need Ideas for an app")).showInfoWindow();
         googleMap.addMarker(new MarkerOptions()
                 .position(new LatLng(43.663283,-79.4111655))
-                .title("Need TTC Token\n12 K-Points"));
+                .title("Need TTC Tokens")
+                .snippet("\n3 K-Points")).showInfoWindow();
         googleMap.addMarker(new MarkerOptions()
                 .position(new LatLng(43.662942,-79.4113911))
-                .title("Kitchen Help\n39 K-Points"));
+                .title("Kitchen Help")).showInfoWindow();
         googleMap.addMarker(new MarkerOptions()
                 .position(new LatLng(43.662648,-79.410145))
-                .title("Need a Charger\n3 K-Points"));
+                .title("Need a Charger")).showInfoWindow();
     }
 
     private void goToLocationZoom(double lat, double lng, float zoom) {
