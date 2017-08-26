@@ -83,7 +83,7 @@ public class MainActivity extends AppCompatActivity
     }
 
     public void requestFavor(View view){
-        Intent intent = new Intent(this, FavorDetailsActivity.class);
+        Intent intent = new Intent(this, RequestFavorActivity.class);
         startActivity(intent);
     }
     @Override

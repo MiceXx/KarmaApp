@@ -64,41 +64,18 @@
 
         </android.support.design.widget.AppBarLayout>
 
-        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            android:layout_marginTop="55dp"
+        <Button
+            android:id="@+id/button_request_favor"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            xmlns:app="http://schemas.android.com/apk/res-auto"
-            android:orientation="vertical"
-            android:gravity="center">
-
-            <Button
-                android:id="@+id/button_request_favor"
-                android:layout_width="250dp"
-                android:layout_height="50dp"
-                android:padding="6dp"
-                android:layout_marginTop="34dp"
-                android:text="Request a Favor"
-                android:onClick="requestFavor"
-                android:background="@drawable/format_curved_edge_button_bw"
-                android:textColor="@color/colorWhite"
-                android:textSize="18dp"/>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/fragment_container_request">
-            </RelativeLayout>
-
-            <ScrollView
-                android:layout_width="match_parent"
-                android:layout_marginTop="10dp"
-                android:layout_height="fill_parent"
-                android:id="@+id/child_scroll">
-
-            </ScrollView>
-
-        </LinearLayout>
+            android:layout_height="50dp"
+            android:padding="6dp"
+            android:layout_marginTop="34dp"
+            android:text="Request a Favor"
+            android:background="@color/colorGreen"
+            android:onClick="requestFavor"
+            android:layout_gravity="bottom"
+            android:textColor="@color/colorWhite"
+            android:textSize="18dp"/>
 
     </android.support.design.widget.CoordinatorLayout>
 
