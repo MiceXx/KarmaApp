@@ -1,6 +1,7 @@
 package com.gmail.accmxx.karmaapp;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationListener;
@@ -16,14 +17,17 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
+public class MapsActivity extends FragmentActivity
+        implements OnMapReadyCallback,GoogleMap.OnMarkerClickListener {
 
     public static boolean initialized = false;
 
     private static final int MY_PERMISSIONS_REQUEST_GPS = 1;
 
+    private Marker markerIdeas, markerCharger, markerTokens, markerKitchen;
     private GoogleMap mMap;
     MarkerOptions mMapMarker = new MarkerOptions();
 
@@ -123,19 +127,25 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             mMap.setMyLocationEnabled(true);
         }
 
-        googleMap.addMarker(new MarkerOptions()
+        markerIdeas = googleMap.addMarker(new MarkerOptions()
                 .position(new LatLng(43.663201,-79.410589))
-                .title("Need Ideas for an app")).showInfoWindow();
-        googleMap.addMarker(new MarkerOptions()
+                .title("Need Ideas for an app")
+                .snippet("2 K-Points"));
+        markerIdeas.showInfoWindow();
+        markerTokens = googleMap.addMarker(new MarkerOptions()
                 .position(new LatLng(43.663283,-79.4111655))
                 .title("Need TTC Tokens")
-                .snippet("\n3 K-Points")).showInfoWindow();
-        googleMap.addMarker(new MarkerOptions()
+                .snippet("3 K-Points"));
+        markerKitchen = googleMap.addMarker(new MarkerOptions()
                 .position(new LatLng(43.662942,-79.4113911))
-                .title("Kitchen Help")).showInfoWindow();
-        googleMap.addMarker(new MarkerOptions()
+                .title("Kitchen Help")
+                .snippet("39 K-Points"));
+        markerCharger = googleMap.addMarker(new MarkerOptions()
                 .position(new LatLng(43.662648,-79.410145))
-                .title("Need a Charger")).showInfoWindow();
+                .title("Need a Charger")
+                .snippet("6 K-Points"));
+
+    //    googleMap.setOnMarkerClickListener(this);
     }
 
     private void goToLocationZoom(double lat, double lng, float zoom) {
@@ -165,5 +175,15 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         }
     }
 
+
+    @Override
+    public boolean onMarkerClick(Marker marker) {
+
+        if(marker.getTitle().equals("Kitchen Help")){
+            Intent intent = new Intent(getApplicationContext(), FavorDetailsActivity.class);
+            startActivity(intent);
+        }
+        return true;
+    }
 }
 
