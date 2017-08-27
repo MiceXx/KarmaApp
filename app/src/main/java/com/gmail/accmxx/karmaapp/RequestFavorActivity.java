@@ -15,7 +15,7 @@ import com.google.android.gms.location.places.ui.PlacePicker;
 
 public class RequestFavorActivity extends AppCompatActivity {
 
-    private int PLACE_PICKER_REQUEST=1;
+    private int PLACE_PICKER_REQUEST;
     private RelativeLayout mPlaceBox;
     public TextView mPlaceAddress;
     @Override
@@ -59,6 +59,10 @@ public class RequestFavorActivity extends AppCompatActivity {
             mPlaceAddress.setText(placeString);
         }
 
+    }
+
+    public void submitButton(View view){
+        finish();
     }
 
 }
