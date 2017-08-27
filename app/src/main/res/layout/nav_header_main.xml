@@ -16,7 +16,7 @@
         android:layout_width="70dp"
         android:clickable="true"
         android:layout_height="70dp"
-        android:src="@drawable/profile_image_generic"
+        android:src="@drawable/profile_icon"
         />
 
     <LinearLayout
@@ -33,7 +33,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/nav_header_profile_name"
             android:paddingTop="18sp"
-            android:text="Michael"
+            android:text="Ivan Pan"
             android:textSize="16dp"
             android:textStyle="bold"
             android:textColor="@color/colorBlack"/>
