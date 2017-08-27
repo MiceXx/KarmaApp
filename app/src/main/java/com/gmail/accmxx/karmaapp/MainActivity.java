@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity
     WebView webView;
 
     private String httpUrlOld = "file:///android_asset/old/index.html";
-    private String httpUrlNew = "file:///android_asset/new/index.html"; //TODO
+    private String httpUrlNew = "file:///android_asset/new/index.html";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
