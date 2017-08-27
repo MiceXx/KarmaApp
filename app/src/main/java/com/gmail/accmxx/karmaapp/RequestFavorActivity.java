@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -18,11 +19,14 @@ public class RequestFavorActivity extends AppCompatActivity {
     private int PLACE_PICKER_REQUEST;
     private RelativeLayout mPlaceBox;
     public TextView mPlaceAddress;
+    Button mSubmitButton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_request_favor);
 
+        mSubmitButton = (Button) findViewById(R.id.button_submit_favor) ;
         mPlaceBox = (RelativeLayout) findViewById(R.id.place_view_box);
         mPlaceAddress = (TextView) findViewById(R.id.place_address);
 
@@ -37,6 +41,13 @@ public class RequestFavorActivity extends AppCompatActivity {
             public void onClick(View view) {
                 PLACE_PICKER_REQUEST = 2;
                 MapPlacePicker(view);
+            }
+        });
+
+        mSubmitButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
             }
         });
 
@@ -59,10 +70,6 @@ public class RequestFavorActivity extends AppCompatActivity {
             mPlaceAddress.setText(placeString);
         }
 
-    }
-
-    public void submitButton(View view){
-        finish();
     }
 
 }

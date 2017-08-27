@@ -33,10 +33,10 @@
             android:layout_height="wrap_content"
             android:id="@+id/nav_header_profile_name"
             android:paddingTop="18sp"
-            android:text="Team Karma"
+            android:text="Michael"
             android:textSize="16dp"
             android:textStyle="bold"
-            android:textColor="#FFF"/>
+            android:textColor="@color/colorBlack"/>
 
         <TextView
             android:id="@+id/nav_header_company_name"
@@ -44,7 +44,7 @@
             android:layout_height="wrap_content"
             android:textSize="14sp"
             android:text=""
-            android:textColor="#FFF"/>
+            android:textColor="@color/colorBlack"/>
     </LinearLayout>
 
 </LinearLayout>

@@ -128,22 +128,30 @@ public class MapsActivity extends FragmentActivity
         }
 
         markerIdeas = googleMap.addMarker(new MarkerOptions()
-                .position(new LatLng(43.663201,-79.410589))
-                .title("Need Ideas for an app")
-                .snippet("2 K-Points"));
+                .position(new LatLng(43.6592173,-79.4153541))
+                .title("Water Plants")
+                .snippet("Please Water my plants ($8.5)"));
+        markerIdeas = googleMap.addMarker(new MarkerOptions()
+                .position(new LatLng(43.6632012,-79.4106093))
+                .title("Bring Flashlight")
+                .snippet("Bring me flashlight ($3)"));
         markerIdeas.showInfoWindow();
         markerTokens = googleMap.addMarker(new MarkerOptions()
+                .position(new LatLng(43.6554424,-79.3954466))
+                .title("Bring Burrito")
+                .snippet("3 K-Points ($7.5)"));
+        markerTokens = googleMap.addMarker(new MarkerOptions()
                 .position(new LatLng(43.663283,-79.4111655))
-                .title("Need TTC Tokens")
-                .snippet("3 K-Points"));
+                .title("Need Tokens")
+                .snippet("I need some TTC Tokens ($2)"));
         markerKitchen = googleMap.addMarker(new MarkerOptions()
                 .position(new LatLng(43.662942,-79.4113911))
                 .title("Kitchen Help")
-                .snippet("39 K-Points"));
+                .snippet("Cleaning and dishwasher ($30)"));
         markerCharger = googleMap.addMarker(new MarkerOptions()
                 .position(new LatLng(43.662648,-79.410145))
                 .title("Need a Charger")
-                .snippet("6 K-Points"));
+                .snippet("Need one fast ($1)"));
 
     //    googleMap.setOnMarkerClickListener(this);
     }
