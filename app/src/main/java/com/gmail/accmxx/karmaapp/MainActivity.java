@@ -17,7 +17,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity
     implements NavigationView.OnNavigationItemSelectedListener{
@@ -85,6 +86,15 @@ public class MainActivity extends AppCompatActivity
                     .setIcon(android.R.drawable.ic_dialog_alert)
                     .show();
         }
+
+        LinearLayout linearLayout = (LinearLayout)header.findViewById(R.id.nav_header_profile_and_company);
+        linearLayout.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                startActivity(new Intent(MainActivity.this,ProfileActivity.class));
+            }
+        });
+
     }
 
     private boolean isNetworkConnected(){
@@ -110,6 +120,9 @@ public class MainActivity extends AppCompatActivity
             startActivity(intent);
         }
         else if (id == R.id.nav_settings) {
+        }
+        else if (id == R.id.nav_about){
+            Toast.makeText(this, "Made by Michael Xu", Toast.LENGTH_LONG).show();
         }
         else if(id ==R.id.nav_refresh){
             webView.loadUrl(httpUrlNew);

@@ -217,13 +217,13 @@ $(document).ready(function() {
 // angular used only for templating, I was too tired to find more lightweight solution
 
 var delivcardDefaultData = [
-  {id: 'Bring Flashlight', price: 3, requests: '--', pledge: 3, weight: 50, favortext: 'Mark as done',
+  {id: 'Bring flashlight', price: 3, requests: '--', pledge: 3, weight: 50, favortext: 'Mark as done',
    sender: 'Ivan Pan', senderImg: 'http://i.imgur.com/szrgXb2.jpg', number: 0,
    themeColor: 'green', themeColorHex: '#52A43A', latFrom: 43.663242, lngFrom: -79.410690, latTo: 43.659266, lngTo: -79.413080,
    bgImgUrl: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/deliv-7.jpg', rating: 5, ratingCount: 26,
    fromStreet: 'Waiting for replies', fromCity: '',
    toStreet: '720 Bathurst St', toCity: 'Toronto, ON M5S 2R4',
-   delivTime: 'Bring me flashlight', delivDate: 'May 16, 2015', delivDateNoun: 'Today',
+   delivTime: 'Bring me a flashlight', delivDate: 'May 16, 2015', delivDateNoun: 'Today',
    reqDl: '24 minutes', delivImg: 'http://i.imgur.com/szrgXb2.jpg', deliv: 'Ivan Pan'},
   {id: 'Water Plants', price: 8.5, requests: 0.3, pledge: 8.5, weight: 50, favortext: 'Do Favor',
    sender: 'Ivan Pan', senderImg: 'http://i.imgur.com/szrgXb2.jpg', number: 1,
