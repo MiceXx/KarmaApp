@@ -156,10 +156,8 @@ $(document).ready(function() {
 
     $card.addClass("req-active1 map-active");
 
-    if(angular.element($card).hasClass('number-0')){
-      initMap($card, 0);
-    }
-    else if(angular.element($card).hasClass('number-1')){
+
+    if(angular.element($card).hasClass('number-1')){
       initMap($card, 1);
     }else if(angular.element($card).hasClass('number-2')){
       initMap($card, 2);
@@ -167,6 +165,9 @@ $(document).ready(function() {
       initMap($card, 3);
     }else if(angular.element($card).hasClass('number-4')){
       initMap($card, 4);
+    }
+    else if(angular.element($card).hasClass('number-5')){
+      initMap($card, 5);
     }
 
 
@@ -216,40 +217,48 @@ $(document).ready(function() {
 // angular used only for templating, I was too tired to find more lightweight solution
 
 var delivcardDefaultData = [
-  {id: 'Water Plants', price: 8.5, requests: 0.3, pledge: 8.5, weight: 50,
+  {id: 'Bring Flashlight', price: 3, requests: '--', pledge: 3, weight: 50, favortext: 'Mark as done',
    sender: 'Ivan Pan', senderImg: 'http://i.imgur.com/szrgXb2.jpg', number: 0,
+   themeColor: 'green', themeColorHex: '#52A43A', latFrom: 43.663242, lngFrom: -79.410690, latTo: 43.659266, lngTo: -79.413080,
+   bgImgUrl: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/deliv-7.jpg', rating: 5, ratingCount: 26,
+   fromStreet: 'Waiting for replies', fromCity: '',
+   toStreet: '720 Bathurst St', toCity: 'Toronto, ON M5S 2R4',
+   delivTime: 'Bring me flashlight', delivDate: 'May 16, 2015', delivDateNoun: 'Today',
+   reqDl: '24 minutes', delivImg: 'http://i.imgur.com/szrgXb2.jpg', deliv: 'Ivan Pan'},
+  {id: 'Water Plants', price: 8.5, requests: 0.3, pledge: 8.5, weight: 50, favortext: 'Do Favor',
+   sender: 'Ivan Pan', senderImg: 'http://i.imgur.com/szrgXb2.jpg', number: 1,
    themeColor: 'green', themeColorHex: '#52A43A', latFrom: 43.663242, lngFrom: -79.410690, latTo: 43.659266, lngTo: -79.413080,
    bgImgUrl: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/deliv-1.jpg', rating: 5, ratingCount: 26,
    fromStreet: '720 Bathurst St', fromCity: 'Toronto, ON M5S 2R4',
    toStreet: '504 Euclid Ave', toCity: 'Toronto, ON M6G 2T2',
    delivTime: 'Please water my plants', delivDate: 'May 16, 2015', delivDateNoun: 'Today',
    reqDl: '24 minutes', delivImg: 'http://i.imgur.com/MsJjONB.jpg', deliv: 'Barack Obama'},
-  {id: 'Bring Burrito', price: 7.5, requests: 0.7, pledge: 7.5, weight: 66,
-   sender: 'Ivan Pan', senderImg: 'http://i.imgur.com/szrgXb2.jpg', number: 1,
+  {id: 'Bring Burrito', price: 7.5, requests: 0.7, pledge: 7.5, weight: 66, favortext: 'Do Favor',
+   sender: 'Ivan Pan', senderImg: 'http://i.imgur.com/szrgXb2.jpg', number: 2,
    themeColor: 'green', themeColorHex: '#52A43A', latFrom: 43.663242, lngFrom: -79.410690, latTo: 43.653741, lngTo: -79.392512,
    bgImgUrl: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/deliv-2.jpg', rating: 4, ratingCount: 21,
    fromStreet: '720 Bathurst St', fromCity: 'Toronto, ON M5S 2R4',
    toStreet: '317 Dundas St W', toCity: 'Toronto, ON M5T 1G4',
    delivTime: 'Bring a burrito', delivDate: 'May 16, 2015', delivDateNoun: 'Today',
    reqDl: '33 minutes', delivImg: 'http://i.imgur.com/tn3R9m6.jpg', deliv: 'Justin Trudeau'},
-  {id: 'Math Questions', price: 12, requests: 1.0, pledge: 12, weight: 20,
-   sender: 'Ivan Pan', senderImg: 'http://i.imgur.com/szrgXb2.jpg', number: 2,
+  {id: 'Math Questions', price: 12, requests: 1.0, pledge: 12, weight: 20, favortext: 'Do Favor',
+   sender: 'Ivan Pan', senderImg: 'http://i.imgur.com/szrgXb2.jpg', number: 3,
    themeColor: 'green', themeColorHex: '#52A43A', latFrom: 43.663242, lngFrom: -79.410690, latTo: 43.659075, lngTo: -79.388055,
    bgImgUrl: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/deliv-3.jpg', rating: 5, ratingCount: 15,
    fromStreet: '720 Bathurst St', fromCity: 'Toronto, ON M5S 2R4',
    toStreet: '200 Elizabeth St', toCity: 'Toronto, ON M5G 2C4',
    delivTime: 'Help me with these math questions', delivDate: 'May 16, 2015', delivDateNoun: 'Today',
    reqDl: '15 minutes', delivImg: 'http://i.imgur.com/DzPGmVq.jpg', deliv: 'Kim Jong-un'},
-  {id: 'Take out Trash', price: 6.5, requests: 1.1, pledge: 6.5, weight: 250,
-   sender: 'Ivan Pan', senderImg: 'http://i.imgur.com/szrgXb2.jpg', number: 3,
+  {id: 'Take out Trash', price: 6.5, requests: 1.1, pledge: 6.5, weight: 250, favortext: 'Do Favor',
+   sender: 'Ivan Pan', senderImg: 'http://i.imgur.com/szrgXb2.jpg', number: 4,
    themeColor: 'green', themeColorHex: '#52A43A', latFrom: 43.663242, lngFrom: -79.410690, latTo: 43.671215, lngTo: -79.423260,
    bgImgUrl: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/deliv-4.jpg', rating: 5, ratingCount: 66,
    fromStreet: '720 Bathurst St', fromCity: 'Toronto, ON M5S 2R4',
    toStreet: '709 Dupont St', toCity: 'Toronto, ON M6G 1Z5',
    delivTime: 'Help me take out the trash', delivDate: 'May 16, 2015', delivDateNoun: 'Today',
    reqDl: '24 minutes', delivImg: 'http://i.imgur.com/bO9GD48.jpg', deliv: 'Donald Trump'},
-  {id: 'Change Light Bulb', price: 5, requests: 1.2, pledge: 5, weight: 149,
-   sender: 'Ivan Pan', senderImg: 'http://i.imgur.com/szrgXb2.jpg', number: 4,
+  {id: 'Change Light Bulb', price: 5, requests: 1.2, pledge: 5, weight: 149, favortext: 'Do Favor',
+   sender: 'Ivan Pan', senderImg: 'http://i.imgur.com/szrgXb2.jpg', number: 5,
    themeColor: 'green', themeColorHex: '#52A43A', latFrom: 43.663242, lngFrom: -79.410690, latTo: 43.677195, lngTo: -79.408875,
    bgImgUrl: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/deliv-5.jpg', rating: 5, ratingCount: 26,
    fromStreet: '720 Bathurst St', fromCity: 'Toronto, ON M5S 2R4',

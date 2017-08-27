@@ -1001,6 +1001,13 @@ body {
   -webkit-transition: opacity 0.48s;
   transition: opacity 0.48s;
 }
+.number-0 .card__request-btn {
+  background-color: #ffc107;
+}
+
+.number-0 .card__request-btn__text-1 {
+  color: #fff8e1;
+}
 .card.req-active1 .card__request-btn__text-1 {
   opacity: 0;
 }
