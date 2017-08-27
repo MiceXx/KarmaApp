@@ -3,7 +3,7 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/request_favor"
+            android:id="@+id/nav_request_favor"
             android:icon="@drawable/icon_favor"
             android:title="Request a Favor" />
         <item
@@ -26,6 +26,9 @@
 
     <item android:title="">
         <menu>
+            <item
+                android:id="@+id/nav_refresh"
+                android:title="Refresh" />
             <item
                 android:id="@+id/nav_legal"
                 android:title="Legal" />

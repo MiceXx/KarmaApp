@@ -20,15 +20,18 @@ import android.webkit.WebViewClient;
 
 public class MainActivity extends AppCompatActivity
     implements NavigationView.OnNavigationItemSelectedListener{
-    private String httpUrlOld = "file:///android_asset/index.html";
-    private String httpUrlNew = ""; //TODO
+
+    WebView webView;
+
+    private String httpUrlOld = "file:///android_asset/old/index.html";
+    private String httpUrlNew = "file:///android_asset/new/index.html"; //TODO
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        WebView webView = (WebView) findViewById(R.id.webLayout);
+        webView = (WebView) findViewById(R.id.webLayout);
         webView.getSettings().getDomStorageEnabled();
         webView.getSettings().setJavaScriptEnabled(true);
         webView.setWebViewClient(new WebViewClient());
@@ -101,9 +104,14 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_help) {
+        if (id == R.id.nav_request_favor) {
+            Intent intent = new Intent(this, RequestFavorActivity.class);
+            startActivity(intent);
         }
         else if (id == R.id.nav_settings) {
+        }
+        else if(id ==R.id.nav_refresh){
+            webView.loadUrl(httpUrlNew);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
